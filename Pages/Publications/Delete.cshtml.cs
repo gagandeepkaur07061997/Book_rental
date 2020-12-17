@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Book_rental.Data;
 using Book_rental.Models;
 
-namespace Book_rental.Pages.Authors
+namespace Book_rental.Pages.Publications
 {
     public class DeleteModel : PageModel
     {
@@ -20,7 +20,7 @@ namespace Book_rental.Pages.Authors
         }
 
         [BindProperty]
-        public Author Author { get; set; }
+        public Publication_detail Publication_detail { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -29,9 +29,11 @@ namespace Book_rental.Pages.Authors
                 return NotFound();
             }
 
-            Author = await _context.Author.FirstOrDefaultAsync(m => m.Id == id);
+            Publication_detail = await _context.Publication_detail
+                .Include(p => p.Books_detail)
+                .Include(p => p.Publisher_detail).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Author == null)
+            if (Publication_detail == null)
             {
                 return NotFound();
             }
@@ -45,11 +47,11 @@ namespace Book_rental.Pages.Authors
                 return NotFound();
             }
 
-            Author = await _context.Author.FindAsync(id);
+            Publication_detail = await _context.Publication_detail.FindAsync(id);
 
-            if (Author != null)
+            if (Publication_detail != null)
             {
-                _context.Author.Remove(Author);
+                _context.Publication_detail.Remove(Publication_detail);
                 await _context.SaveChangesAsync();
             }
 

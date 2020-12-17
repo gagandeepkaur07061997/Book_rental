@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Book_rental.Data;
 using Book_rental.Models;
 
-namespace Book_rental.Pages.Authors
+namespace Book_rental.Pages.Books
 {
     public class CreateModel : PageModel
     {
@@ -21,11 +21,12 @@ namespace Book_rental.Pages.Authors
 
         public IActionResult OnGet()
         {
+        ViewData["AuthorId"] = new SelectList(_context.Author, "Id", "Email_Id");
             return Page();
         }
 
         [BindProperty]
-        public Author Author { get; set; }
+        public Books_detail Books_detail { get; set; }
 
         // To protect from overposting attacks, see https://aka.ms/RazorPagesCRUD
         public async Task<IActionResult> OnPostAsync()
@@ -35,7 +36,7 @@ namespace Book_rental.Pages.Authors
                 return Page();
             }
 
-            _context.Author.Add(Author);
+            _context.Books_detail.Add(Books_detail);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");

@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Book_rental.Data;
 using Book_rental.Models;
 
-namespace Book_rental.Pages.Authors
+namespace Book_rental.Pages.Books
 {
     public class IndexModel : PageModel
     {
@@ -19,11 +19,12 @@ namespace Book_rental.Pages.Authors
             _context = context;
         }
 
-        public IList<Author> Author { get;set; }
+        public IList<Books_detail> Books_detail { get;set; }
 
         public async Task OnGetAsync()
         {
-            Author = await _context.Author.ToListAsync();
+            Books_detail = await _context.Books_detail
+                .Include(b => b.Author).ToListAsync();
         }
     }
 }

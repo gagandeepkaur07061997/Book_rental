@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Book_rental.Data;
 using Book_rental.Models;
 
-namespace Book_rental.Pages.Authors
+namespace Book_rental.Pages.Books
 {
     public class DetailsModel : PageModel
     {
@@ -19,7 +19,7 @@ namespace Book_rental.Pages.Authors
             _context = context;
         }
 
-        public Author Author { get; set; }
+        public Books_detail Books_detail { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -28,9 +28,10 @@ namespace Book_rental.Pages.Authors
                 return NotFound();
             }
 
-            Author = await _context.Author.FirstOrDefaultAsync(m => m.Id == id);
+            Books_detail = await _context.Books_detail
+                .Include(b => b.Author).FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Author == null)
+            if (Books_detail == null)
             {
                 return NotFound();
             }

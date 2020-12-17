@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Book_rental.Data;
 using Book_rental.Models;
 
-namespace Book_rental.Pages.Authors
+namespace Book_rental.Pages.Publishers
 {
     public class EditModel : PageModel
     {
@@ -21,7 +21,7 @@ namespace Book_rental.Pages.Authors
         }
 
         [BindProperty]
-        public Author Author { get; set; }
+        public Publisher_detail Publisher_detail { get; set; }
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,9 +30,9 @@ namespace Book_rental.Pages.Authors
                 return NotFound();
             }
 
-            Author = await _context.Author.FirstOrDefaultAsync(m => m.Id == id);
+            Publisher_detail = await _context.Publisher_detail.FirstOrDefaultAsync(m => m.Id == id);
 
-            if (Author == null)
+            if (Publisher_detail == null)
             {
                 return NotFound();
             }
@@ -48,7 +48,7 @@ namespace Book_rental.Pages.Authors
                 return Page();
             }
 
-            _context.Attach(Author).State = EntityState.Modified;
+            _context.Attach(Publisher_detail).State = EntityState.Modified;
 
             try
             {
@@ -56,7 +56,7 @@ namespace Book_rental.Pages.Authors
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!AuthorExists(Author.Id))
+                if (!Publisher_detailExists(Publisher_detail.Id))
                 {
                     return NotFound();
                 }
@@ -69,9 +69,9 @@ namespace Book_rental.Pages.Authors
             return RedirectToPage("./Index");
         }
 
-        private bool AuthorExists(int id)
+        private bool Publisher_detailExists(int id)
         {
-            return _context.Author.Any(e => e.Id == id);
+            return _context.Publisher_detail.Any(e => e.Id == id);
         }
     }
 }

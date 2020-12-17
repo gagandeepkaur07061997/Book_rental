@@ -1,5 +1,5 @@
 ﻿@page
-@model Book_rental.Pages.Authors.IndexModel
+@model Book_rental.Pages.Books.IndexModel
 
 @{
     ViewData["Title"] = "Index";
@@ -9,40 +9,39 @@
 
 <p>
     <a asp-page="Create">Create New</a>
-   
 </p>
 <table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Author[0].Name)
+                @Html.DisplayNameFor(model => model.Books_detail[0].Tittle)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author[0].Email_Id)
+                @Html.DisplayNameFor(model => model.Books_detail[0].Discription)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author[0].Address)
+                @Html.DisplayNameFor(model => model.Books_detail[0].Price)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author[0].Mobile_Number)
+                @Html.DisplayNameFor(model => model.Books_detail[0].Author)
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model.Author) {
+@foreach (var item in Model.Books_detail) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Tittle)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Email_Id)
+                @Html.DisplayFor(modelItem => item.Discription)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Address)
+                @Html.DisplayFor(modelItem => item.Price)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Mobile_Number)
+                @Html.DisplayFor(modelItem => item.Author.Email_Id)
             </td>
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |

@@ -1,0 +1,37 @@
+﻿@page
+@model Book_rental.Pages.Publications.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Publication_detail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Publication_detail.Books_Copies)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publication_detail.Books_Copies)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Publication_detail.Publisher_detail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publication_detail.Publisher_detail.Publisher_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Publication_detail.Books_detail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publication_detail.Books_detail.Tittle)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Publication_detail.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>

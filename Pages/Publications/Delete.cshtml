@@ -1,0 +1,40 @@
+﻿@page
+@model Book_rental.Pages.Publications.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Publication_detail</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Publication_detail.Books_Copies)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publication_detail.Books_Copies)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Publication_detail.Publisher_detail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publication_detail.Publisher_detail.Publisher_Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Publication_detail.Books_detail)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Publication_detail.Books_detail.Tittle)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Publication_detail.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

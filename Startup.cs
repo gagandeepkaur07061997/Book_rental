@@ -13,6 +13,7 @@ using Book_rental.Data;
 
 
 
+
 namespace Book_rental
 {
     public class Startup
@@ -29,8 +30,11 @@ namespace Book_rental
         {
             services.AddRazorPages();
 
-            services.AddDbContext<Book_rentaldatabase>(options =>
-                    options.UseSqlServer(Configuration.GetConnectionString("Book_rentaldatabase")));
+            services.AddDbContext<Book_rentaldDatabase>(options =>
+                    options.UseSqlServer(Configuration.GetConnectionString("Book_rentaldDatabase")));
+
+           
+
 
             
 

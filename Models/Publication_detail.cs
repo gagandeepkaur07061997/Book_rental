@@ -17,7 +17,7 @@ namespace Book_rental.Models
         public int Publisher_detailId { get; set; }
         public Publisher_detail Publisher_detail { get; set; }
 
-        public int Book_detailId { get; set; }
+        public int Books_detailId { get; set; }
         public Books_detail Books_detail { get; set; }
 
 
