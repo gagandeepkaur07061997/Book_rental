@@ -2,54 +2,123 @@
 @model Book_rental.Pages.Authors.IndexModel
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "AUTHORS'DATA";
 }
+<!--code to change the test' position from left to right-->
+<div class="text-center">
 
-<h1>Index</h1>
-
+    <header>
+        <!--z-index code to display image on the Author page behind the text-->
+        <style>
+            img {
+                position: absolute;
+                left: 0px;
+                top: 0px;
+                z-index: -1;
+            }
+        </style>
+    </header>
+    <img src="~/Images/Authorimage.jpg" height=" 800" weight="1000" />
+    <!--code to increse the size of heading and to change its color and bold it-->
+    <h1 class="display-4"><b><p style="color:purple;">AUTHORS' DATA</b></h1></p>
+</div>
 <p>
-    <a asp-page="Create">Create New</a>
-   
+<a asp-page="Create">Create New</a>
 </p>
+
+    
 <table class="table">
     <thead>
+
+        <!--code to display the details of Author like its name, email id, address and mobile number-->
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Author[0].Name)
+
+
+            <th><!--code to increse the size of text and to change its color-->
+                <h1 class="display-5"><p style="color:springgreen;">
+                        @Html.DisplayNameFor(model => model.Author[0].Name)
+
+                </h1>
+                </p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author[0].Email_Id)
+                <!--code to increse the size of text and to change its color-->
+                <h1 class="display-7">
+                    <p style="color:springgreen;">
+                        @Html.DisplayNameFor(model => model.Author[0].Email_Id)
+
+                </h1>
+                </p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author[0].Address)
+                <!--code to increse the size of text and to change its color-->
+                <h1 class="display-7">
+                    <p style="color:springgreen;">
+                        @Html.DisplayNameFor(model => model.Author[0].Address)
+
+                </h1>
+                </p>
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Author[0].Mobile_Number)
+                <!--code to increse the size of text and to change its color-->
+                <h1 class="display-7">
+                    <p style="color:springgreen;">
+                        @Html.DisplayNameFor(model => model.Author[0].Mobile_Number)
+
+                </h1>
+                </p>
+
             </th>
             <th></th>
+
         </tr>
+
     </thead>
+
     <tbody>
-@foreach (var item in Model.Author) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email_Id)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Address)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Mobile_Number)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model.Author)
+        {
+            <tr>
+                <td>
+                    <!--code to make the text bold and to change its color-->
+                    <b>
+                        <p style="color:mediumspringgreen;">
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </p>
+                    </b>
+                </td>
+                <td>
+                    <!--code to make the text bold and to change its color-->
+                    <b>
+                        <p style="color:mediumspringgreen;">
+                            @Html.DisplayFor(modelItem => item.Email_Id)
+                        </p>
+                    </b>
+                </td>
+                <td>
+                    <!--code to make the text bold and to change its color-->
+                    <b>
+                        <p style="color:mediumspringgreen;">
+                            @Html.DisplayFor(modelItem => item.Address)
+                        </p>
+                    </b>
+                </td>
+
+                <td>
+                    <!--code to make the text bold and to change its color-->
+                    <b>
+                        <p style="color:mediumspringgreen;">
+                            @Html.DisplayFor(modelItem => item.Mobile_Number)
+                        </p>
+                    </b>
+                </td>
+
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

@@ -5,8 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 
 namespace Book_rental.Models
-    //This class contains the information about Author means it tells about its ID, name, email.id, address and mobile number.//
-{
+//This class contains the information about Author means it tells about its ID, name, email.id, address and mobile number.//
+{    
     public class Author
     {
         
@@ -19,4 +19,5 @@ namespace Book_rental.Models
         [Required]
         public string Mobile_Number { get; set; }
     }
+   
 }

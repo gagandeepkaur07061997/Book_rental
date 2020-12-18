@@ -4,46 +4,52 @@
 @{
     ViewData["Title"] = "Index";
 }
+<body>
+    <div class="text-center"><!--code to keep the heading in the center-->
 
-<h1>Index</h1>
+     <!--code to increse the size of heading and to change its color, also to make it bold-->   
+    <h1 class="display-4"><b><p style="color:brown;">PUBLICATIONS' DATA</b></p></h1>
+    </div>
+    </body>
 
 
-<p>
-    <a asp-page="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                Books Copies
-            </th>
-            <th>
-               Publisher detail
-            </th>
-            <th>
-              Books detail
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model.Publication_detail) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Books_Copies)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Publisher_detail.Publisher_Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Books_detail.Tittle)
-            </td>
-            <td>
-                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <p>
+        <a asp-page="Create">Create New</a>
+    </p>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    Books Copies<!--code to remove the underscore from Books copies to make it look nice-->
+                </th>
+                <th>
+                    Publisher detail<!--code to remove the underscore from Publisher details to make it look nice-->
+                </th>
+                <th>
+                    Books detail<!--code to remove the underscore from Books detail to make it look nice-->
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Publication_detail)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Books_Copies)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Publisher_detail.Publisher_Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Books_detail.Tittle)
+                    </td>
+                    <td>
+                        <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                        <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                        <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
