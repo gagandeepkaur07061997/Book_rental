@@ -12,10 +12,12 @@
                 left: 0px;
                 top: 0px;
                 z-index: -1;
+                {
+                  text-align: center;
             }
         </style>
     </header>
-    <img src="~/Images/publicationimage.jpg" height=" 1050" weight="800" />
+    <img src="~/Images/bkimage.jpg" height=" 750" weight="1000" />
     <!--code to increse the size of heading and to change its color, also to bold it-->
     <h1 class="display-4"><b><p style="color:white;">BOOKS' DATA</b></h1></p>
 </div>
@@ -29,7 +31,7 @@
                 <th>
                     <!--code to display the details of books like its tittle, discription, price, author-->
                     <!--code to increse the size of heading and to change its color t-->
-                    <h1 class="display-5"><p style="color:black;">
+                    <h1 class="display-5"><p style="color:white;">
                             @Html.DisplayNameFor(model => model.Books_detail[0].Tittle)
                     </h1>
                     </p>
@@ -37,7 +39,7 @@
                 <th>
                     <!--code to increse the size of heading and to change its color -->
                     <h1 class="display-5">
-                        <p style="color:black;">
+                        <p style="color:white;">
                             @Html.DisplayNameFor(model => model.Books_detail[0].Discription)
                     </h1>
                     </p>
@@ -45,7 +47,7 @@
                 <th>
                     <!--code to increse the size of heading and to change its color -->
                     <h1 class="display-5">
-                        <p style="color:black;">
+                        <p style="color:white;">
                             @Html.DisplayNameFor(model => model.Books_detail[0].Price)
                     </h1>
                     </p>
@@ -53,7 +55,7 @@
                 <th>
                     <!--code to increse the size of heading and to change its color -->
                     <h1 class="display-5">
-                        <p style="color:black;">
+                        <p style="color:white;">
                             @Html.DisplayNameFor(model => model.Books_detail[0].Author)
                     </h1>
                     </p>
@@ -68,7 +70,7 @@
                     <td>
                         <!--code to make the text bold and to change its color -->
                         <b>
-                            <p style="color:black;">
+                            <p style="color:white;">
                                 @Html.DisplayFor(modelItem => item.Tittle)
                             </p>
                         </b>
@@ -76,7 +78,7 @@
                     <td>
                         <!--code to make the text bold and to change its color -->
                         <b>
-                            <p style="color:black;">
+                            <p style="color:white;">
                                 @Html.DisplayFor(modelItem => item.Discription)
                             </p>
                         </b>
@@ -84,7 +86,7 @@
                     <td>
                         <!--code to make the text bold and to change its color -->
                         <b>
-                            <p style="color:black;">
+                            <p style="color:white;">
                                 @Html.DisplayFor(modelItem => item.Price)
                             </p>
                         </b>
@@ -92,7 +94,7 @@
                     <td>
                         <!--code to make the text bold and to change its color -->
                         <b>
-                            <p style="color:black;">
+                            <p style="color:white;">
                                 @Html.DisplayFor(modelItem => item.Author.Email_Id)
                             </p>
                         </b>

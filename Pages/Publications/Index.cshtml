@@ -5,10 +5,23 @@
     ViewData["Title"] = "Index";
 }
 <body>
-    <div class="text-center"><!--code to keep the heading in the center-->
+    <div class="text-center">
+        <!--code to keep the heading in the center-->
+        <header>
+            <!--z-index code to display image on thePublication page behind the text-->
+            <style>
+                img {
+                    position: absolute;
+                    left: 0px;
+                    top: 0px;
+                    z-index: -1;
+                }
+            </style>
+        </header>
+        <img src="~/Images/pbimage.jpg" height=" 850" weight="800" />
 
-     <!--code to increse the size of heading and to change its color, also to make it bold-->   
-    <h1 class="display-4"><b><p style="color:brown;">PUBLICATIONS' DATA</b></p></h1>
+        <!--code to increse the size of heading and to change its color, also to make it bold-->
+        <h1 class="display-4"><b><p style="color:brown;">PUBLICATIONS' DATA</b></p></h1>
     </div>
     </body>
 
@@ -19,30 +32,60 @@
     <table class="table">
         <thead>
             <tr>
-                <th>
-                    Books Copies<!--code to remove the underscore from Books copies to make it look nice-->
+                <th><!--code to increse the size of heading and to change its color t-->
+                    <h1 class="display-5"><p style="color:black;">
+                       Books Copies<!--code to remove the underscore from Books copies to make it look nice-->
+                    </h1>
+                    </p>
                 </th>
                 <th>
-                    Publisher detail<!--code to remove the underscore from Publisher details to make it look nice-->
+                    <!--code to increse the size of heading and to change its color t-->
+                    <h1 class="display-5"><p style="color:black;">
+
+                     Publisher detail<!--code to remove the underscore from Publisher details to make it look nice-->
+                        </h1>
+                    </p>
                 </th>
                 <th>
-                    Books detail<!--code to remove the underscore from Books detail to make it look nice-->
-                </th>
+                    <!--code to increse the size of heading and to change its color t-->
+                    <h1 class="display-5">
+                      <p style="color:black;">
+                            Books detail<!--code to remove the underscore from Books detail to make it look nice-->
+                          </h1>
+                    </p>
+                          </th>   
+                          
                 <th></th>
             </tr>
         </thead>
         <tbody>
-            @foreach (var item in Model.Publication_detail)
-            {
+               @foreach (var item in Model.Publication_detail)
+                    {
                 <tr>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Books_Copies)
+                        <!--code to make the text bold and to change its color -->
+                        <b>
+                            <p style="color:black;">
+                                @Html.DisplayFor(modelItem => item.Books_Copies)
+                                </p>
+                                </b>
+                       
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Publisher_detail.Publisher_Name)
+                        <!--code to make the text bold and to change its color -->
+                        <b>
+                            <p style="color:black;">
+                                @Html.DisplayFor(modelItem => item.Publisher_detail.Publisher_Name)
+                                </p>
+                            </b>
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.Books_detail.Tittle)
+                        <!--code to make the text bold and to change its color -->
+                        <b>
+                            <p style="color:black;">
+                                @Html.DisplayFor(modelItem => item.Books_detail.Tittle)
+                                </p>
+                            </b>
                     </td>
                     <td>
                         <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
@@ -51,5 +94,5 @@
                     </td>
                 </tr>
             }
-        </tbody>
+                </tbody>
     </table>
