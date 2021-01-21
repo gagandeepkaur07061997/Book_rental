@@ -5,6 +5,14 @@ INSERT INTO [dbo].[Author] ([Id], [Name], [Email_Id], [Address], [Mobile_Number]
 INSERT INTO [dbo].[Author] ([Id], [Name], [Email_Id], [Address], [Mobile_Number]) VALUES (4, N'Rajdeep kaur', N'Rajdeepkaur09@gmail.com', N'3/23 Glen Avenew, papatoetoe', N'02290980811')
 INSERT INTO [dbo].[Author] ([Id], [Name], [Email_Id], [Address], [Mobile_Number]) VALUES (5, N'Ritika', N'Ritika1231@gmail.com', N'29 Rangitoto road, Papatoetoe', N'02253479801')
 SET IDENTITY_INSERT [dbo].[Author] OFF
+SET IDENTITY_INSERT [dbo].[Publisher_detail] ON
+INSERT INTO [dbo].[Publisher_detail] ([Id], [Publisher_Name], [Mobile_Number], [Email_Id]) VALUES (1, N'Harpreet Singh', N'0220887768', N'Harpreet123@gmail.com')
+INSERT INTO [dbo].[Publisher_detail] ([Id], [Publisher_Name], [Mobile_Number], [Email_Id]) VALUES (2, N'Varinder singh', N'0220955059', N'varinder909@gmail.com')
+INSERT INTO [dbo].[Publisher_detail] ([Id], [Publisher_Name], [Mobile_Number], [Email_Id]) VALUES (3, N'Manveer Singh', N'022348873', N'Manveer56singh@gmail.com')
+INSERT INTO [dbo].[Publisher_detail] ([Id], [Publisher_Name], [Mobile_Number], [Email_Id]) VALUES (4, N'Karan ', N'02207710188', N'Karan101@gmail.com')
+INSERT INTO [dbo].[Publisher_detail] ([Id], [Publisher_Name], [Mobile_Number], [Email_Id]) VALUES (5, N'Joban Singh', N'022309687', N'Joban0@gmail.com')
+SET IDENTITY_INSERT [dbo].[Publisher_detail] OFF
+
 SET IDENTITY_INSERT [dbo].[Books_detail] ON
 INSERT INTO [dbo].[Books_detail] ([Id], [Tittle], [Discription], [Price], [AuthorId]) VALUES (1, N'Heart of darkness', N'It is based on a true story', CAST(20.00 AS Decimal(18, 2)), 1)
 INSERT INTO [dbo].[Books_detail] ([Id], [Tittle], [Discription], [Price], [AuthorId]) VALUES (2, N'Sole of heart', N'An interesting Story', CAST(10.00 AS Decimal(18, 2)), 2)
@@ -19,10 +27,4 @@ INSERT INTO [dbo].[Publication_detail] ([Id], [Books_Copies], [Publisher_detailI
 INSERT INTO [dbo].[Publication_detail] ([Id], [Books_Copies], [Publisher_detailId], [Books_detailId]) VALUES (4, N'60', 5, 3)
 INSERT INTO [dbo].[Publication_detail] ([Id], [Books_Copies], [Publisher_detailId], [Books_detailId]) VALUES (5, N'78', 3, 4)
 SET IDENTITY_INSERT [dbo].[Publication_detail] OFF
-SET IDENTITY_INSERT [dbo].[Publication_detail] ON
-INSERT INTO [dbo].[Publication_detail] ([Id], [Books_Copies], [Publisher_detailId], [Books_detailId]) VALUES (1, N'6', 1, 1)
-INSERT INTO [dbo].[Publication_detail] ([Id], [Books_Copies], [Publisher_detailId], [Books_detailId]) VALUES (2, N'20', 2, 2)
-INSERT INTO [dbo].[Publication_detail] ([Id], [Books_Copies], [Publisher_detailId], [Books_detailId]) VALUES (3, N'50', 4, 5)
-INSERT INTO [dbo].[Publication_detail] ([Id], [Books_Copies], [Publisher_detailId], [Books_detailId]) VALUES (4, N'60', 5, 3)
-INSERT INTO [dbo].[Publication_detail] ([Id], [Books_Copies], [Publisher_detailId], [Books_detailId]) VALUES (5, N'78', 3, 4)
-SET IDENTITY_INSERT [dbo].[Publication_detail] OFF
+
